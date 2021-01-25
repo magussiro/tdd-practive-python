@@ -9,7 +9,9 @@
 
 # Press the green button in the gutter to run the script.
 class WasRun(object):
-    pass
+
+    def __init__(self):
+        self.wasRun = None
 
 
 if __name__ == '__main__':
