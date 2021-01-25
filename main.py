@@ -17,6 +17,10 @@ class TestCase(object):
         self.setUp()
         method = getattr(self, self.name)
         method()
+        self.tearDown()
+
+    def tearDown(self):
+        pass
 
 
 class TestCaseTest(TestCase):
@@ -33,13 +37,14 @@ class WasRun(TestCase):
         TestCase.__init__(self, name)
 
     def setUp(self):
-        self.wasSetUp = 1
         self.wasRun = None
         self.log = 'setUp '
 
     def testMethod(self):
-        self.wasRun = 1
-        self.log = self.log + "testMethod"
+        self.log = self.log + "testMethod "
+
+    def tearDown(self):
+        self.log = self.log + "tearDown "
 
 
 if __name__ == '__main__':
