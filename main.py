@@ -39,7 +39,7 @@ class WasRun(TestCase):
         TestCase.__init__(self, name)
 
     def setUp(self):
-        self.wasRun = 1
+        self.wasRun = None
 
     def testMethod(self):
         self.wasRun = 1
