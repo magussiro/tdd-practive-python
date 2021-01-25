@@ -8,14 +8,16 @@
 # Press the green button in the gutter to run the script.
 class WasRun(object):
 
-    def __init__(self):
+    def __init__(self, name):
+        self.name = name
         self.wasRun = None
+
+    def run(self):
+        method = getattr(self, self.name)
+        method()
 
     def testMethod(self):
         self.wasRun = 1
-
-    def run(self):
-        pass
 
 
 if __name__ == '__main__':
