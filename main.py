@@ -22,6 +22,11 @@ class TestCaseTest(TestCase):
         test.run()
         assert (test.wasRun)
 
+    def testSetUp(self):
+        test = WasRun("testMethod")
+        assert (not test.wasRun)
+        test.run()
+
 
 class WasRun(TestCase):
 
@@ -34,7 +39,7 @@ class WasRun(TestCase):
 
 
 if __name__ == '__main__':
-    TestCaseTest("testRunning").run()
+    TestCaseTest("testSetUp").run()
     # test = WasRun("testRun")
     # print test.wasRun
     # test.run()
