@@ -18,6 +18,6 @@ class WasRun(object):
 if __name__ == '__main__':
     test = WasRun("testRun")
     print test.wasRun
-    test.testMethod()
+    test.run()
     print test.wasRun
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
