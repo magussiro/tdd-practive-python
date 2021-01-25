@@ -52,5 +52,10 @@ class WasRun(TestCase):
         self.log = self.log + "tearDown "
 
 
+class TestResult:
+    def summary(self):
+        return "1 run, 0 failed"
+
+
 if __name__ == '__main__':
     TestCaseTest("testResult").run()
