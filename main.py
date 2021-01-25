@@ -18,6 +18,7 @@ class TestCase(object):
         method = getattr(self, self.name)
         method()
         self.tearDown()
+        return TestResult()
 
     def tearDown(self):
         pass
