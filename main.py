@@ -14,6 +14,9 @@ class WasRun(object):
     def testMethod(self):
         self.wasRun = 1
 
+    def run(self):
+        pass
+
 
 if __name__ == '__main__':
     test = WasRun("testRun")
