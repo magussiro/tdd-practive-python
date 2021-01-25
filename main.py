@@ -13,6 +13,9 @@ class WasRun(object):
     def __init__(self):
         self.wasRun = None
 
+    def testMethod(self):
+        pass
+
 
 if __name__ == '__main__':
     test = WasRun("testRun")
