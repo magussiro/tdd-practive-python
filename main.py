@@ -6,7 +6,11 @@
 
 
 # Press the green button in the gutter to run the script.
-class WasRun(object):
+class TestCase(object):
+    pass
+
+
+class WasRun(TestCase):
 
     def __init__(self, name):
         self.name = name
