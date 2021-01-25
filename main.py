@@ -5,8 +5,6 @@
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 
 
-
-
 # Press the green button in the gutter to run the script.
 class WasRun(object):
 
@@ -14,7 +12,7 @@ class WasRun(object):
         self.wasRun = None
 
     def testMethod(self):
-        pass
+        self.wasRun = 1
 
 
 if __name__ == '__main__':
