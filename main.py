@@ -20,8 +20,6 @@ class TestCase(object):
 
 
 class TestCaseTest(TestCase):
-    def setUp(self):
-
     def testTemplateMethod(self):
         test = WasRun("testMethod")
         test.run()
