@@ -8,6 +8,10 @@
 
 
 # Press the green button in the gutter to run the script.
+class WasRun(object):
+    pass
+
+
 if __name__ == '__main__':
     test = WasRun("testRun")
     print test.wasRun
