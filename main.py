@@ -51,6 +51,9 @@ class WasRun(TestCase):
     def testMethod(self):
         self.log = self.log + "testMethod "
 
+    def testBrokenMethod(self):
+        raise Exception
+
     def tearDown(self):
         self.log = self.log + "tearDown "
 
@@ -64,6 +67,11 @@ class TestResult:
 
     def summary(self):
         return "%d run, 0 failed" % self.runCount
+
+    def testFailedResult(self):
+        test = WasRun("testBrokenMethod")
+        result = test.run()
+        assert ("1 run 1 failed", result.summary())
 
 
 if __name__ == '__main__':
