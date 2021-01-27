@@ -1,9 +1,12 @@
 from main import TestCase, WasRun, TestResult
 
 
-class TestSuit(object):
-    def add(self, param):
-        pass
+class TestSuit:
+    def __init__(self):
+        self.tests = []
+
+    def add(self, test):
+        self.tests.append(test)
 
     def run(self):
         pass
