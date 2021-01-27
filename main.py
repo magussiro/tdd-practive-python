@@ -61,6 +61,7 @@ class WasRun(TestCase):
 class TestResult:
     def __init__(self):
         self.runCount = 0
+        self.errorCount = 0
 
     def testStarted(self):
         self.runCount = self.runCount + 1
@@ -80,7 +81,7 @@ class TestResult:
         assert ("1 run, 1 failed" == result.summary())
 
     def testFailed(self):
-        pass
+        self.errorCount = self.errorCount + 1
 
 
 if __name__ == '__main__':
