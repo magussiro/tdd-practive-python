@@ -6,7 +6,6 @@
 
 
 # Press the green button in the gutter to run the script.
-from test_case_test import TestCaseTest
 
 
 class TestCase(object):
