@@ -9,7 +9,10 @@ class TestSuit:
         self.tests.append(test)
 
     def run(self):
-        pass
+        result = TestResult()
+        for test in self.tests:
+            test.run(result)
+        return result
 
 
 class TestCaseTest(TestCase):
@@ -43,8 +46,8 @@ class TestCaseTest(TestCase):
 
 
 if __name__ == '__main__':
-    TestCaseTest("testFailedResult").run()
-    print TestCaseTest("testTemplateMethod").run().summary()
-    print TestCaseTest("testResult").run().summary()
-    print TestCaseTest("testFailedResultFormatting").run().summary()
-    print TestCaseTest("testFailedResult").run().summary()
+    TestCaseTest("testSuite").run()
+    # print TestCaseTest("testTemplateMethod").run().summary()
+    # print TestCaseTest("testResult").run().summary()
+    # print TestCaseTest("testFailedResultFormatting").run().summary()
+    # print TestCaseTest("testFailedResult").run().summary()
