@@ -6,6 +6,9 @@
 
 
 # Press the green button in the gutter to run the script.
+from test_case_test import TestCaseTest
+
+
 class TestCase(object):
     def __init__(self, name):
         self.name = name
@@ -27,18 +30,6 @@ class TestCase(object):
 
     def tearDown(self):
         pass
-
-
-class TestCaseTest(TestCase):
-    def testTemplateMethod(self):
-        test = WasRun("testMethod")
-        test.run()
-        assert ("setUp testMethod tearDown " == test.log)
-
-    def testResult(self):
-        test = WasRun("testMethod")
-        result = test.run()
-        assert ("1 run, 0 failed" == result.summary())
 
 
 class WasRun(TestCase):
@@ -72,20 +63,9 @@ class TestResult:
     def summary(self):
         return "%d run, 0 failed" % (self.runCount, self.errorCount)
 
-    def testFailedResult(self):
-        test = WasRun("testBrokenMethod")
-        result = test.run()
-        assert ("1 run 1 failed" == result.summary())
-
-    def testFailedResultFomatting(self):
-        result = TestResult()
-        result.testStarted()
-        result.testFailed()
-        assert ("1 run, 1 failed" == result.summary())
-
     def testFailed(self):
         self.errorCount = self.errorCount + 1
 
 
-if __name__ == '__main__':
-    TestCaseTest("testFailedResult").run()
+
+
