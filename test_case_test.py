@@ -1,6 +1,14 @@
 from main import TestCase, WasRun, TestResult
 
 
+class TestSuit(object):
+    def add(self, param):
+        pass
+
+    def run(self):
+        pass
+
+
 class TestCaseTest(TestCase):
     def testTemplateMethod(self):
         test = WasRun("testMethod")
@@ -22,6 +30,13 @@ class TestCaseTest(TestCase):
         result.testStarted()
         result.testFailed()
         assert ("1 run, 1 failed" == result.summary())
+
+    def testSuite(self):
+        suite = TestSuit()
+        suite.add(WasRun("testMethod"))
+        suite.add(WasRun("testBrokenMethod"))
+        result = suite.run()
+        assert ("2 run, 1 failed" == result.sumary())
 
 
 if __name__ == '__main__':
