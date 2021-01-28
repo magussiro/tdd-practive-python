@@ -30,9 +30,9 @@ class TestCaseTest(TestCase):
     def testFailedResult(self):
         test = WasRun("testBrokenMethod")
         test.run(self.result)
-        assert ("1 run 1 failed" == self.result.summary())
+        assert ("1 run, 1 failed" == self.result.summary())
 
-    def testFailedResultFomatting(self):
+    def testFailedResultFormatting(self):
         self.result.testStarted()
         self.result.testFailed()
         assert ("1 run, 1 failed" == self.result.summary())
@@ -48,10 +48,10 @@ class TestCaseTest(TestCase):
 if __name__ == '__main__':
     suite = TestSuit()
     suite.add(TestCaseTest("testTemplateMethod"))
-    suite.add(TestCaseTest("testTesult"))
+    suite.add(TestCaseTest("testResult"))
     suite.add(TestCaseTest("testFailedResultFormatting"))
     suite.add(TestCaseTest("testFailedResult"))
-    suite.add(TestCaseTest("testSuit"))
+    suite.add(TestCaseTest("testSuite"))
     result = TestResult()
     suite.run(result)
     print result.summary()
