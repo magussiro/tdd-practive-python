@@ -16,17 +16,20 @@ class TestSuit:
 class TestCaseTest(TestCase):
     def testTemplateMethod(self):
         test = WasRun("testMethod")
-        test.run()
+        result = TestResult()
+        test.run(result)
         assert ("setUp testMethod tearDown " == test.log)
 
     def testResult(self):
         test = WasRun("testMethod")
-        result = test.run()
+        result = TestResult()
+        test.run(result)
         assert ("1 run, 0 failed" == result.summary())
 
     def testFailedResult(self):
         test = WasRun("testBrokenMethod")
-        result = test.run()
+        result = TestResult()
+        test.run(result)
         assert ("1 run 1 failed" == result.summary())
 
     def testFailedResultFomatting(self):
@@ -45,7 +48,12 @@ class TestCaseTest(TestCase):
 
 
 if __name__ == '__main__':
-    TestCaseTest("testSuite").run()
+    suite = TestSuit()
+    suite.add(TestCaseTest("testTemplateMethod"))
+    suite.add(TestCaseTest("testTesult"))
+    suite.add(TestCaseTest("testFailedResultFormatting"))
+    suite.add(TestCaseTest("testFailedResult"))
+    suite.add(TestCaseTest("testSuit"))
     # print TestCaseTest("testTemplateMethod").run().summary()
     # print TestCaseTest("testResult").run().summary()
     # print TestCaseTest("testFailedResultFormatting").run().summary()
